@@ -16,5 +16,9 @@ else()
   message(FATAL_ERROR "you must set OT_OSX_DEPLOYMENT_TARGET in the environment before using this triplet")
 endif()
 
+if(NOT DEFINED XCODE_ROOT)
+  message(FATAL_ERROR "you must set XCODE_ROOT in the environment before using this triplet")
+endif()
+
 set(SDKROOT "$ENV{XCODE_ROOT}/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk")
 set(ENV{SDKROOT} "${SDKROOT}")
