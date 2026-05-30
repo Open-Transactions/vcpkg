@@ -1,12 +1,16 @@
 set(VCPKG_ENV_PASSTHROUGH "OT_OSX_DEPLOYMENT_TARGET")
 set(VCPKG_ENV_PASSTHROUGH_UNTRACKED "EXTERNAL_QT_DIR;XCODE_ROOT")
 
-set(VCPKG_TARGET_ARCHITECTURE arm64)
+set(VCPKG_TARGET_ARCHITECTURE x64)
 set(VCPKG_CRT_LINKAGE dynamic)
 set(VCPKG_LIBRARY_LINKAGE static)
 
 set(VCPKG_CMAKE_SYSTEM_NAME Darwin)
-set(VCPKG_OSX_ARCHITECTURES arm64)
+set(VCPKG_OSX_ARCHITECTURES x86_64)
+
+set(VCPKG_C_FLAGS_DEBUG "-fno-omit-frame-pointer -fno-optimize-sibling-calls -fsanitize=address -fsanitize-address-use-after-scope -fno-sanitize-recover=all -fsanitize-recover=implicit-conversion -fsanitize-recover=signed-integer-overflow -fsanitize-recover=unsigned-integer-overflow")
+set(VCPKG_CXX_FLAGS_DEBUG "-fno-omit-frame-pointer -fno-optimize-sibling-calls -fsanitize=address -fsanitize-address-use-after-scope -fno-sanitize-recover=all -fsanitize-recover=implicit-conversion -fsanitize-recover=signed-integer-overflow -fsanitize-recover=unsigned-integer-overflow")
+set(VCPKG_LINKER_FLAGS_DEBUG "-fsanitize=address")
 
 if(DEFINED ENV{OT_OSX_DEPLOYMENT_TARGET})
   message(STATUS "using $ENV{OT_OSX_DEPLOYMENT_TARGET} for VCPKG_OSX_DEPLOYMENT_TARGET")
