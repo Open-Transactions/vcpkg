@@ -16,7 +16,7 @@ else()
   message(FATAL_ERROR "you must set OT_OSX_DEPLOYMENT_TARGET in the environment before using this triplet")
 endif()
 
-if(NOT DEFINED XCODE_ROOT)
+if(NOT DEFINED ENV{XCODE_ROOT})
   message(FATAL_ERROR "you must set XCODE_ROOT in the environment before using this triplet")
 endif()
 

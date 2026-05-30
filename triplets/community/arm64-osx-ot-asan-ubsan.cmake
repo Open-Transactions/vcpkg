@@ -8,6 +8,10 @@ set(VCPKG_LIBRARY_LINKAGE static)
 set(VCPKG_CMAKE_SYSTEM_NAME Darwin)
 set(VCPKG_OSX_ARCHITECTURES arm64)
 
+set(VCPKG_C_FLAGS_DEBUG "-fno-omit-frame-pointer -fno-optimize-sibling-calls -fsanitize=address,undefined -fsanitize-address-use-after-scope -fno-sanitize-recover=all -fsanitize-recover=implicit-conversion -fsanitize-recover=signed-integer-overflow -fsanitize-recover=unsigned-integer-overflow -fno-sanitize=pointer-overflow")
+set(VCPKG_CXX_FLAGS_DEBUG "-fno-omit-frame-pointer -fno-optimize-sibling-calls -fsanitize=address,undefined -fsanitize-address-use-after-scope -fno-sanitize-recover=all -fsanitize-recover=implicit-conversion -fsanitize-recover=signed-integer-overflow -fsanitize-recover=unsigned-integer-overflow -fno-sanitize=pointer-overflow")
+set(VCPKG_LINKER_FLAGS_DEBUG "-fsanitize=address,undefined")
+
 if(DEFINED ENV{OT_OSX_DEPLOYMENT_TARGET})
   message(STATUS "using $ENV{OT_OSX_DEPLOYMENT_TARGET} for VCPKG_OSX_DEPLOYMENT_TARGET")
   set(CMAKE_OSX_DEPLOYMENT_TARGET "$ENV{OT_OSX_DEPLOYMENT_TARGET}")
