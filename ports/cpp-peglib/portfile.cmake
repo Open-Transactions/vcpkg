@@ -3,7 +3,7 @@ vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO yhirose/cpp-peglib
     REF "v${VERSION}"
-    SHA512 8a9c6add9c65bbbcdd55d2a32c88afb2cb88588839addc7cd42abd352f6c0ef7721d8b86202642d3ad98640a9a5bccf46500eafa105e3e0f44a45174ce7bb1ee
+    SHA512 22c55acd1dbebab6c9fc7b9df901f7e2f0328c0bef5cdda24d30c364597a58d0565b692f3ed9c6128c7be7397d900fc26b97b9339456021390b5130ae720cfc4
     HEAD_REF master
 )
 
@@ -13,4 +13,3 @@ file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/lib")
 
 # Handle copyright
 file(INSTALL "${SOURCE_PATH}/LICENSE" DESTINATION "${CURRENT_PACKAGES_DIR}/share/cpp-peglib" RENAME copyright)
-
