@@ -2,7 +2,7 @@ vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO KDE/solid
     REF "v${VERSION}"
-    SHA512 d78439e1899ddc3fb64818e6d101e3e3c48a04de18907f87cfa39a1aaf423135a3deba085cf31dc3c208c2b9d8b91afda932df32a38995a97187df382c786fb7
+    SHA512 b3e35e1b25fb044a281e1f8c7a0c7741fa740bbd4a0a3d0abe84ce2d0412257852765b46771dd6db962c5768cc000fc72ed6eec999f8c5eb406d733dad9c4b06
     HEAD_REF master
     PATCHES
         001_fix_imobile.patch
